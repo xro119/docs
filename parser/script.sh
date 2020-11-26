@@ -1,0 +1,1 @@
+FILE="super.CSV" ; printf 'date, time, s-ip, method, cs-uri-query, sc-status\n'> $FILE && cat /var/log/nginx/access.log |awk '{ split($4,b,"["); split(b[2],a,":");split($6,c,"\""); printf "%s,%s,%s,%s,%s,%s\n",a[1],a[2]":"a[3]":"a[4],$1,c[2],$7,$9}' >> $FILE

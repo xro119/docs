@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+  - name: Nginx install
+    include_tasks: tasks/install_nginx.yml
+  - name: Copy site
+    include_tasks: tasks/copy_site.yml
+  - name: Restart nginx
+    include_tasks: tasks/restart_nginx.yml
+

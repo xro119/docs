@@ -1,0 +1,4 @@
+zone "777.com" IN {
+    type master;
+    file "db.777.com";
+};

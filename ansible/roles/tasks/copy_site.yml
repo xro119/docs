@@ -1,0 +1,15 @@
+- name: copy the nginx config file
+  copy:
+    src: /etc/ansible/static_pkrapp/pokerapp.cfg
+    dest: /etc/nginx/conf.d/pokerapp.conf
+  become: yes
+  #- name: create symlink
+  #file:
+  # src: /etc/nginx/sites-available/pokerapp.cfg
+  # dest: /etc/nginx/sites-enabled/default
+  # state: link
+  #become: yes
+- name: copy the content of the web site
+  copy:
+    src: /etc/ansible/static_pkrapp/
+    dest: /var/www/pokerapp/
